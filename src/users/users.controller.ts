@@ -6,8 +6,8 @@ import {
   ParseIntPipe,
   Post,
 } from '@nestjs/common';
-import { UserService } from './user-service';
-import { User } from 'src/user';
+import { UserService } from './users.service';
+import { User } from 'src/entities/user.entity';
 
 @Controller('users')
 export class UserController {

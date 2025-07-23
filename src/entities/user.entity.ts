@@ -5,15 +5,18 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { Post } from './post/post';
-import { Comment } from './comment';
+import { Post } from './post.entity';
+import { Comment } from './comment.entity';
 
 @Entity()
 export class User extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
+  @Column()
   firstName: string;
+  @Column()
   lastName: string;
+  @Column()
   isActive: boolean;
   @Column()
   username: string;

@@ -1,10 +1,11 @@
-import { Module } from '@nestjs/common';
-import { UserController } from './auth/user-controller';
-import { UserService } from './auth/user-service';
+import { UserModule } from './user_module/user.module';
+import { Post } from './entities/post.entity';
+import { UserController } from './users/users.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from './user';
 import { DataSource } from 'typeorm';
-import { UserModule } from './user-module';
+import { UserService } from './users/users.service';
+import { UserhttpModule } from './user_http/userhttp.module';
+import { Module } from '@nestjs/common';
 
 @Module({
   imports: [
@@ -18,11 +19,11 @@ import { UserModule } from './user-module';
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
-    TypeOrmModule.forFeature([User]),
-    User,
     UserModule,
+    Post,
+    UserhttpModule,
   ],
-  controllers: [UserController],
+  controllers: [UserController, UserController],
   providers: [UserService],
 })
 export class AppModule {

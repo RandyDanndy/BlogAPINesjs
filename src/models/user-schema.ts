@@ -1,4 +1,4 @@
-import { User } from 'src/user';
+import { User } from 'src/entities/user.entity';
 import { EntitySchema } from 'typeorm';
 
 export const UserSchema = new EntitySchema<User>({
