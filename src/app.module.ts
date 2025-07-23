@@ -1,11 +1,10 @@
-import { UserModule } from './user_module/user.module';
-import { Post } from './entities/post.entity';
-import { UserController } from './users/users.controller';
+import { Post } from './post/post.entity';
+import { UserController } from './user/user.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
-import { UserService } from './users/users.service';
-import { UserhttpModule } from './user_http/userhttp.module';
+import { UserService } from './user/user.service';
 import { Module } from '@nestjs/common';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -21,7 +20,6 @@ import { Module } from '@nestjs/common';
     }),
     UserModule,
     Post,
-    UserhttpModule,
   ],
   controllers: [UserController, UserController],
   providers: [UserService],
